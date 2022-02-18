@@ -1,24 +1,27 @@
 :root {
     scroll-behavior: smooth;
-    --theme-color: #fff;
+    --theme-color: #f5f5f7;
+    --white: white;
     --text-color: #000;
-    /* --highlight-color-1: #61dafb;
-    --highlight-color-2: #ffd700; */
+    --text-color2: #bf4800;
     --box-shadow: #21242c80;
-    /* --code-color: #282c34;
-    --button-color: #61dafb;
+    --highlight-color-1: #0071e3;
+    --highlight-color-2: #3497fa;
+    --code-color: #1452cc;
+    --button-color: #360da7;
     --inverse-theme-color: #20232a;
-    --inverse-text-color: #fff; */
+    --inverse-text-color: #fff;
+    --font-weight2: 400;
 }
 
 .body {
     background-color: var(--theme-color);
     color: var(--text-color);
-    font-family: 'Open Sans', sans-serif;
+    font-family: SF Pro Display, SF Pro Icons, AOS Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
 }
 
 .header {
-    background-color: var(--theme-color);
+    background-color: var(--white);
     position: sticky;
     top: 0;
     z-index: 100;
@@ -98,6 +101,134 @@
     border-bottom: 0.25rem solid var(--highlight-color-2);
 }
 
+.pedidos {
+    padding: 1rem 0;
+}
+
+.pedidos__div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 0 1rem;
+}
+
+.pedidos__titulo {
+    font-size: 3rem;
+    margin: 0;
+    color: var(--text-color2);
+    font-weight: var(--font-weight2);
+}
+
+.pedidos__pedidos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.pedidos__restaurante {
+    background-color: var(--white);
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    /* box-shadow: 0 0 0.5rem var(--code-color); */
+    /* border: 0.15rem solid black; */
+    border-radius: 18 px;
+    border-top-left-radius: 18px;
+    border-top-right-radius: 18px;
+    border-bottom-right-radius: 18px;
+    border-bottom-left-radius: 18px;
+    padding-bottom: 2rem;
+    overflow: hidden;
+    transition: all .3s cubic-bezier(0, 0, .5, 1);
+}
+
+.pedidos__restaurante:hover {
+    /* box-shadow: 0 0 0.5rem var(--highlight-color-1), 0 0 1rem var(--highlight-color-1), 0 0 1.5rem var(--highlight-color-1); */
+    box-shadow: 2px 4px 12px var(--box-shadow);
+    transform: scale(1.01);
+}
+
+.pedidos__imagen {
+    display: flex;
+    width: 100%;
+    margin: 0;
+}
+
+.pedidos__imagen-restaurante {
+    width: 100%;
+}
+
+.pedidos__container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    text-align: center;
+    padding: 0 1rem;
+}
+
+.pedidos__container-data-titulo {
+    color: var(--highlight-color-1);
+    margin: 0;
+}
+
+.pedidos__container-data-about {
+    font-weight: 300;
+    margin: 0;
+}
+
+.pedidos__container-button-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.pedidos__container-button {
+    text-decoration: none;
+    font-weight: 700;
+    background-color: var(--highlight-color-1);
+    border: 0.1rem solid var(--highlight-color-1);
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    color: var(--white);
+    transition: all 0.5s;
+}
+
+.pedidos__container-button:hover {
+    background-color: var(--highlight-color-2);
+    border: 0.1rem solid var(--highlight-color-2);
+}
+
+.footer {
+    background-color: var(--inverse-theme-color);
+    color: var(--inverse-text-color);
+    padding: 2rem 0;
+}
+
+.footer-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0 2rem;
+}
+
+.footer-nav__credits {
+    text-align: center;
+    font-size: 0.8rem;
+    margin: 0;
+    padding-top: 0.5rem;
+    box-shadow: 0 -0.25rem 0.25rem -0.25rem var(--theme-color);
+}
+
+.footer-nav__credits-author {
+    color: var(--highlight-color-1);
+    text-decoration: none;
+}
+
 @media (min-width: 854px) {
     .header-nav__menu-icon {
         display: none;
@@ -111,5 +242,27 @@
     .header-nav__link {
         font-size: 1rem;
         color: var(--text-color);
+    }
+    .pedidos-container {
+        display: flex;
+        align-items: center;
+        padding: 0;
+        max-width: 1024px;
+        margin: auto;
+    }
+    .pedidos__pedidos {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+    .footer-nav {
+        padding: 0;
+        max-width: 1024px;
+        margin: auto;
+    }
+    .footer-nav__link-list {
+        gap: 1.5rem;
+    }
+    .footer-nav__link {
+        width: 2rem;
     }
 }
